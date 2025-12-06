@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="/WEB-INF/templates/template.xhtml">
+        
+        <ui:define name="title">Главная страница - Система учета продаж сервисов</ui:define>
+        
+        <ui:define name="pageTitle">Информационная подсистема учета продаж сервисов</ui:define>
+        
+        <ui:define name="content">
+            <!-- Инициализация данных при первом обращении -->
+            <h:outputText value="#{dataInitializer}" style="display: none;" />
+            
+            <div class="grid">
+                <div class="col-12">
+                    <p:panel header="О системе" styleClass="welcome-panel">
+                        <p>
+                            Добро пожаловать в информационную подсистему учета продаж сервисов!
+                        </p>
+                        <p>
+                            Эта система позволяет управлять клиентами, услугами и покупками. Вы можете добавлять, редактировать и удалять записи для каждой модели данных.
+                        </p>
+                    </p:panel>
+                </div>
+                <div class="col-12">
+                    <p:panel header="Навигация" styleClass="navigation-panel">
+                        <div class="p-grid">
+                            <div class="p-col-12 p-md-4">
+                                <p:panel header="Клиенты" styleClass="nav-card">
+                                    <p>Управление информацией о клиентах</p>
+                                    <p:button value="Перейти к клиентам" outcome="client" icon="pi pi-users" styleClass="ui-button-primary" style="width: 100%; margin-top: 10px;"/>
+                                </p:panel>
+                            </div>
+                            <div class="p-col-12 p-md-4">
+                                <p:panel header="Услуги" styleClass="nav-card">
+                                    <p>Управление каталогом услуг</p>
+                                    <p:button value="Перейти к услугам" outcome="service" icon="pi pi-shopping-cart" styleClass="ui-button-primary" style="width: 100%; margin-top: 10px;"/>
+                                </p:panel>
+                            </div>
+                            <div class="p-col-12 p-md-4">
+                                <p:panel header="Покупки" styleClass="nav-card">
+                                    <p>Учет продаж и покупок</p>
+                                    <p:button value="Перейти к покупкам" outcome="payment" icon="pi pi-money-bill" styleClass="ui-button-primary" style="width: 100%; margin-top: 10px;"/>
+                                </p:panel>
+                            </div>
+                        </div>
+                    </p:panel>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition> 
+</html>
